@@ -15,7 +15,7 @@ def gcd_multiple_numbers():
 
 def nr_of_vowels():
     string = input("Enter a string: ")
-    vowels = ['a', 'e', 'i', 'o', 'u']
+    vowels = ['a', 'e', 'i', 'o', 'u', 'A', 'E', 'I', 'O', 'U']
     nr_vowels = 0
     for index in range(0, len(string)):
         if string[index] in vowels:
@@ -164,7 +164,7 @@ if __name__ == '__main__':
     # nr_of_vowels()
 
     # ex3
-    # number_of_occurrences()
+    #number_of_occurrences()
 
     # ex4
     # toLowerCaseWithUnderscore()
