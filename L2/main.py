@@ -152,9 +152,45 @@ def ex8(_list, x=1, flag=True):
     return result
 
 
+def ex9(matrix):
+    columns = list(zip(*matrix))
+    result = []
+
+    for c in range(0, len(columns)):
+        for r in range(0, len(columns[0])):
+            if columns[c][r] < max(columns[c][:r], default=0):
+                result.append(tuple((r, c)))
+    return result
+
+
+def ex10(*lists):
+    new_list = []
+    max_nr_of_elements = max([len(_list) for _list in lists])
+    for _list in lists:
+        if len(_list) < max_nr_of_elements:
+            for index in range(len(_list), max_nr_of_elements):
+                _list.append(None)
+        new_list.append(tuple(_list))
+    return list(zip(*new_list))
+
+
 def ex11(_list):
     _list.sort(key=lambda x: x[1][2])
     return _list
+
+
+def group_by_rhyme(_list):
+    result = []
+    for word in _list:
+        ok = 0
+        for group in result:
+            if group[0][len(group[0]) - 1] == word[len(word) - 1] and group[0][len(group[0]) - 2] == word[
+                len(word) - 2]:
+                group.append(word)
+                ok = 1
+        if ok == 0:
+            result.append([word])
+    return result
 
 
 if __name__ == '__main__':
@@ -205,27 +241,39 @@ if __name__ == '__main__':
     # ex6
     print("ex6----------------------------------------------------------------------------------")
     print(elements_with_x_appearances([1, 2, 3], [2, 3, 4], [4, 5, 6], [4, 1, "test"], x=2))
+    print()
 
     # ex7
     print("ex7----------------------------------------------------------------------------------")
     print(palindrome_tuple([12, 121, 45, 88, 34, 11]))
+    print()
 
     # ex8
     print("ex8----------------------------------------------------------------------------------")
     print(ex8(x=2, _list=["test", "hello", "lab002"], flag=False))
+    print()
 
     # ex9
     print("ex9----------------------------------------------------------------------------------")
-    # print(ex9())
+    stadium = [
+        [1, 2, 3, 2, 1, 1],
+        [2, 4, 4, 3, 7, 2],
+        [5, 5, 2, 5, 6, 4],
+        [6, 6, 7, 6, 7, 5]
+    ]
+    print(ex9(stadium))
+    print()
 
     # ex10
     print("ex10----------------------------------------------------------------------------------")
-    # print(ex10())
+    print(ex10([1, 2, 3], [5, 6, 7], ["a", "b", "c", "d"]))
+    print()
 
     # ex11
     print("ex11----------------------------------------------------------------------------------")
     print(ex11([('abc', 'bcd'), ('abc', 'zza')]))
+    print()
 
     # ex12
     print("ex12----------------------------------------------------------------------------------")
-    # print(ex12())
+    print(group_by_rhyme(['ana', 'banana', 'carte', 'arme', 'parte']))
