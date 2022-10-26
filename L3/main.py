@@ -1,39 +1,9 @@
 from collections.abc import Iterable
 
 
-# Press Shift+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
-
-
 def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
     print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
 
-
-#
-# def entropy():
-#     a = int(input("a: "))
-#     b = int(input("b: "))
-#     result = (a / (a + b)) * math.log2((a + b) / a) + (b / (a + b)) * math.log((a + b) / b)
-#     print(result)
-#
-#
-# def node_entropy():
-#     a = int(input("a: "))
-#     b = int(input("b: "))
-#     c = int(input("c: "))
-#     d = int(input("d: "))
-#     e = int(input("e: "))
-#     f = int(input("f: "))
-#     #g = int(input("g: "))
-#     #h = int(input("h: "))
-#     Hcd = (c / (c + d)) * math.log2((c + d) / c) + (d / (c + d)) * math.log((c + d) / d)
-#     Hef = (e / (e + f)) * math.log2((e + f) / e) + (f / (e + f)) * math.log((e + f) / f)
-#     #Hef=0
-#     #Hgh = (g / (g + h)) * math.log2((g + h) / g) + (h / (g + h)) * math.log((g + h) / h)
-#     # + ((g + h) / (a + b)) * Hgh
-#     result = ((c + d) / (a + b)) * Hcd + ((e + f) / (a + b)) * Hef
-#     print(result)
 
 def ex1(a, b):
     set_a = set(a)
@@ -179,8 +149,6 @@ def ex9(*args, **kwargs):
 # Press the green button in the gutter to run the script.
 if __name__ == '__main__':
     print_hi('PyCharm')
-    # node_entropy()
-    # entropy()
 
     # ex1
     print("ex1------------------------------------------------------")
